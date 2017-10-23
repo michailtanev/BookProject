@@ -1,0 +1,48 @@
+﻿@model SchoolBookApplication.Web.Models.BookDetailsViewModel
+@{
+    ViewBag.Title = "Book   Detail";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">
+            @Model.Title            
+        </h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <img src="@Url.Action("Image","Home", new { id = Model.ImageId })"  class="img-responsive"/>
+    </div>
+   
+    <div class="col-md-6">
+        <h2 class="text-danger"style="font-family:'AR BLANCA';">Sale Price : @Model.SalePrice DKK</h2>
+        <h3 class="text-primary" style="text-decoration:line-through;">Original Price : @Model.OriginalPrice DKK</h3>
+        <div class="bookdetails-wrap">
+            <ul class="bookdetails-wrap-info"> 
+                    <li class="list-group-contact-items"><label>Discount : <span>@((1-(Model.SalePrice / Model.OriginalPrice)).ToString("0.00%"))</span></label></li>  
+                    <li class="list-group-contact-items"><label>You Save : <span>@(Model.OriginalPrice - Model.SalePrice) DKK</span></label></li>             
+                    <li class="list-group-contact-items"><label>Category : <span>@Model.Category</span></label></li>
+                    <li class="list-group-contact-items"><label>Author : <span>@Model.Author</span></label></li>
+                    <li class="list-group-contact-items"><label>Year : <span>@Model.Year</span></label></li>
+                    <li class="list-group-contact-items"><label>Condition : <span>@Model.AdditionalInformation</span></label></li>                    
+                    <li class="list-group-contact-items"><label>Posted on : <span>@Model.ListingDate.ToString(" HH:mm, dd MMMM yyyy")  </span></label></li> 
+          
+            </ul>
+        </div>
+        
+        <h3 class="contact-info"><u>Contact Information:</u></h3>
+        <div>
+            <ul class="list-group"style="width:350px;">
+                <li class="list-group-item">Name : <p class="pull-right text-info">@Model.SellerFirstName @Model.SellerLastName</p></li>
+                <li class="list-group-item">Phone : <p class="pull-right text-info">@Model.SellerPhone</p></li>
+                <li class="list-group-item">Email : <p class="pull-right text-info">@Model.SellerEmail</p></li>
+                <li class="list-group-item">City : <p class="pull-right text-info">@Model.City</p></li>
+            </ul>
+        </div>
+        <p><span class="glyphicon glyphicon-chevron-left" style="color:#337ab7"></span>
+            @Html.ActionLink("Go Back", "Show","ShowBooks")
+        </p>
+    </div>
+</div>
+

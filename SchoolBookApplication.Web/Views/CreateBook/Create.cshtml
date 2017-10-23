@@ -1,0 +1,88 @@
+﻿@model SchoolBookApplication.Web.Models.CreateBookViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="info"style="margin-left:15px;">Sell Your Book</h2>
+<hr />
+    @using (Html.BeginForm("Create", "CreateBook", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @*<hr />*@
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.SalePrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SalePrice, new { htmlAttributes = new { placeholder = "Enter Sale Price", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SalePrice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.OriginaPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OriginaPrice, new { htmlAttributes = new { placeholder = "Enter Original Price", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OriginaPrice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { placeholder = "Enter Title", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Category, new { htmlAttributes = new { placeholder = "Enter Category", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Author, new { htmlAttributes = new { placeholder = "Enter Author", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Year, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Year, new { htmlAttributes = new { placeholder = "Enter Year", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AdditionalInformation, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10 ">
+                    @Html.EditorFor(model => model.AdditionalInformation, new { htmlAttributes = new { placeholder = "Enter Additional Information", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AdditionalInformation, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.UploadPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.UploadPhoto, htmlAttributes: new { type = "file" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-primary btn-default" />
+                    <a href="@Url.Action("Index","Home")" class="btn btn-danger btn-default">Cancel</a>
+                </div>
+            </div>
+        </div>
+    } 
+  
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
