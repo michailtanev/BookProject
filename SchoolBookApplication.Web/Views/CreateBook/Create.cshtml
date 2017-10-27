@@ -3,107 +3,112 @@
     ViewBag.Title = "Create";
 }
 
-<h2 class="info"style="margin-left:15px;">Sell Your Book</h2>
+<h2 class="info" style="margin-left:15px;">Sell Your Book</h2>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <hr />
-    @using (Html.BeginForm("Create", "CreateBook", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
-    {
-        @Html.AntiForgeryToken()
+@using (Html.BeginForm("Create", "CreateBook", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="main col-lg-12 myHalfCol">
+        <div class="col-lg-6">
+            <div class="form-horizontal myHormHorizontal">
+                @*<hr />*@
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SalePrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SalePrice, new { htmlAttributes = new { placeholder = "Enter Sale Price", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SalePrice, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OriginaPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.OriginaPrice, new { htmlAttributes = new { placeholder = "Enter Original Price", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.OriginaPrice, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { placeholder = "Enter Title", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-        <div class="form-horizontal">
-            @*<hr />*@
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.SalePrice, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.SalePrice, new { htmlAttributes = new { placeholder = "Enter Sale Price", @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.SalePrice, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Category, new { htmlAttributes = new { placeholder = "Enter Category", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.OriginaPrice, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.OriginaPrice, new { htmlAttributes = new { placeholder = "Enter Original Price", @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.OriginaPrice, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { placeholder = "Enter Title", @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-                </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Category, new { htmlAttributes = new { placeholder = "Enter Category", @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Author, new { htmlAttributes = new { placeholder = "Enter Author", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Author, new { htmlAttributes = new { placeholder = "Enter Author", @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Year, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Year, new { htmlAttributes = new { placeholder = "Enter Year", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Year, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Year, new { htmlAttributes = new { placeholder = "Enter Year", @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AdditionalInformation, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 ">
+                        @Html.EditorFor(model => model.AdditionalInformation, new { htmlAttributes = new { placeholder = "Enter Additional Information", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AdditionalInformation, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.AdditionalInformation, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10 ">
-                    @Html.EditorFor(model => model.AdditionalInformation, new { htmlAttributes = new { placeholder = "Enter Additional Information", @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.AdditionalInformation, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UploadPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.UploadPhoto, htmlAttributes: new { enctype = "multipart/form-data", type = "file", id = "imgInp" })<br />
+                        @*<img id="choosePic" src="#" class="img-responsive" />*@
+                    </div>
+                </div>
                 </div>
             </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.UploadPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.UploadPhoto, htmlAttributes: new { enctype = "multipart/form-data",type="file", id = "imgInp" })
-                    <img id="choosePic" src="#" class="img-responsive"/>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-primary btn-default" />
-                    <a href="@Url.Action("Index","Home")" class="btn btn-danger btn-default">Cancel</a>
-                </div>
-            </div>
+        <div class="col-lg-6">
+            <img id="choosePic" src="#" class="img-responsive" />
         </div>
-    } 
-   <script>
-       function readURL(input) {
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-primary btn-default" />
+                        <a href="@Url.Action("Index","Home")" class="btn btn-danger btn-default">Cancel</a>
+                    </div>
+                </div>
+            </div>
+            }
+            <script>
+                function readURL(input) {
 
-           if (input.files && input.files[0]) {
-               var reader = new FileReader();
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
 
-               reader.onload = function (e) {
-                   $('#choosePic').attr('src', e.target.result);
-               }
+                        reader.onload = function (e) {
+                            $('#choosePic').attr('src', e.target.result);
+                        }
 
-               reader.readAsDataURL(input.files[0]);
-           }
-       }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
 
-       $("#imgInp").change(function () {
-           readURL(this);
-       });
-         
-   </script>
+                $("#imgInp").change(function () {
+                    readURL(this);
+                });
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+            </script>
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }

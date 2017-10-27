@@ -294,4 +294,17 @@ width: 100%;
   border-top: 3px solid #79A70A;
 }
 
+.myHalfCol .col-lg-9 {
+    padding: 0 10px;
+ 
+}
+/*.myHalfCol .col-lg-6 {
+    padding: 0 10px;
+}
+.myHalfCol .col-lg-6 {
+    width: 48%;
+    margin: 0 1% /* or auto */
 
+.myHormHorizontal{
+    width: 200%;
+}
