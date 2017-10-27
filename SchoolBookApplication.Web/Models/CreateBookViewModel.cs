@@ -36,7 +36,7 @@ namespace SchoolBookApplication.Web.Models
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "Additional Information")]
+        [Display(Name = "Condition")]
         public string AdditionalInformation { get; set; }
 
         [Required]
