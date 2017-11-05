@@ -12,6 +12,7 @@
 
     public class CreateBookController : BaseController
     {
+  
         [Authorize]
         public ActionResult Create()
         {
@@ -33,7 +34,7 @@
                     using (var mem = new MemoryStream())
                     {
                         b.UploadPhoto.InputStream.CopyTo(mem);
-                        content = mem.GetBuffer();
+                        content = mem.GetBuffer();                      
                         fileExtension = b.UploadPhoto.FileName.Split(new[] { '.' }).Last();
                     }
                 }
@@ -53,7 +54,8 @@
                 this.Data.Books.Add(book);
                 this.Data.SaveChanges();
             }
-            return RedirectToAction("Index", "Home");
+            TempData["Success"] = "Added Successfully!";
+            return RedirectToAction("Create", "CreateBook");
         }
 
     }
