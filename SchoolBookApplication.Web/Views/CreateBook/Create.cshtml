@@ -7,7 +7,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <hr />
-@using (Html.BeginForm("Create","CreateBook", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Create", "CreateBook", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="main col-lg-12 myHalfCol">
@@ -51,62 +51,77 @@
                         @Html.EditorFor(model => model.Author, new { htmlAttributes = new { placeholder = "Enter Author", @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
                     </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Year, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Year, new { htmlAttributes = new { placeholder = "Enter Year", @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
+                </div>               
+                @{
+                    List<SelectListItem> listItems = new List<SelectListItem>();
+                    listItems.Add(new SelectListItem { Text = "Used - Like New", Value = "Used - Like New" });
+                    listItems.Add(new SelectListItem { Text = "Used - Very Good",Value = "Used - Very Good" });
+                    listItems.Add(new SelectListItem { Text = "Used - Acceptable", Value = "Used - Acceptable" });
+                }
                 <div class="form-group">
                     @Html.LabelFor(model => model.AdditionalInformation, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10 ">
-                        @Html.EditorFor(model => model.AdditionalInformation, new { htmlAttributes = new { placeholder = "Enter Additional Information", @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.AdditionalInformation, "", new { @class = "text-danger" })
+                        @Html.DropDownListFor(model => model.AdditionalInformation, listItems, "Select Condition", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.Year, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("Year", new SelectList(Enumerable.Range(2000, DateTime.Now.Year - 1999)
+                        .ToList()), "-- Select Year --", Model.Year)
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.UploadPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(model => model.UploadPhoto, htmlAttributes: new { enctype = "multipart/form-data", type = "file", id = "imgInp" })<br />
-                        @*<img id="choosePic" src="#" class="img-responsive" />*@
+                    <div class="col-md-10">                        
+                        @Html.TextBoxFor(model => model.UploadPhoto, htmlAttributes: new { enctype = "multipart/form-data", type = "file", id = "imgInp"})<br />
                     </div>
                 </div>
+
               </div>
             </div>
      <div class="col-lg-6">
          <img id="choosePic" src="#" class="img-responsive" />
      </div>
      <div class="form-group">
-       <div class="col-md-offset-2 col-md-10">
+       <div class="col-md-offset-2 col-md-10 dimension">
          <input type="submit" value="Create" class="btn btn-primary btn-default" />
          <a href="@Url.Action("Index","Home")" class="btn btn-danger btn-default">Cancel</a>
+           @if (TempData["Success"] != null)
+           {
+               <p class="alert alert-success" id="successMessage">@TempData["Success"]</p>
+           }
        </div>
      </div>
    </div>
 
 }
+
 <script>
-   function readURL(input) {
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#choosePic').attr('src', e.target.result)
+                    .height(450);
+            }
 
-      if (input.files && input.files[0]) {
-          var reader = new FileReader();
-              reader.onload = function (e) {
-                  $('#choosePic').attr('src', e.target.result)                     
-                      .height(450);
-           }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
-           reader.readAsDataURL(input.files[0]);
-      }
-     }
+    $("#imgInp").change(function () {
+        readURL(this);
+    });
 
-     $("#imgInp").change(function () {
-       readURL(this);
-     });
+   
+    //var delta = 0;
+    //function rotateBy10Deg(ele){
+    //        ele.style.webkitTransform = "rotate(" + delta + "deg)";
+    //    delta+=90;
+    //}
+
 
 </script>
 
