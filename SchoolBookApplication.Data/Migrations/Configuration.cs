@@ -46,10 +46,11 @@ namespace SchoolBookApplication.Data.Migrations
                 //book1
                 var book1 = new Book()
                 {
-                    OriginalPrice = 100,
-                    SalePrice = 50,
+                    OriginalPrice = 700,
+                    SalePrice = 500,
                     ListingDate = new DateTime(2017, 1,10 ),
-                    AdditionalInformation = "good condition"
+                    Author = "Daniel Attenborough",
+                    AdditionalInformation = "Used - Like New"
                 };
                 book1.Seller = testUser;
                 var img = new Image()
@@ -61,7 +62,7 @@ namespace SchoolBookApplication.Data.Migrations
                 book1.Image = img;
                 var category = new BookCategory()
                 {
-                    Name = "Programming",
+                    Name = "Computer Science",
                 };
                 var bookType = new BookType()
                 {
@@ -82,10 +83,11 @@ namespace SchoolBookApplication.Data.Migrations
                 //book2
                 var book2 = new Book()
                 {
-                    OriginalPrice = 150,
-                    SalePrice = 100,
+                    OriginalPrice = 650,
+                    SalePrice = 400,
                     ListingDate = new DateTime(2017, 2, 8),
-                    AdditionalInformation = "very good condition"
+                    Author = "Michael Boller",
+                    AdditionalInformation = "Used - Very Good"
                 };
                 book2.Seller = testUser;
                 var img2 = new Image()
@@ -97,11 +99,11 @@ namespace SchoolBookApplication.Data.Migrations
                 book2.Image = img2;
                 var category2 = new BookCategory()
                 {
-                    Name = "Programming",
+                    Name = "Multimedia Design",
                 };
                 var bookType2 = new BookType()
                 {
-                    Name = "ASP.NET",
+                    Name = "Pro HTML and CSS3",
                     Year = 2014,
                     BookCategory = category2
                 };
@@ -118,10 +120,11 @@ namespace SchoolBookApplication.Data.Migrations
                 //book3
                 var book3 = new Book()
                 {
-                    OriginalPrice = 200,
-                    SalePrice = 100,
+                    OriginalPrice = 800,
+                    SalePrice = 500,
                     ListingDate = new DateTime(2017,3,30),
-                    AdditionalInformation = "very good condition"
+                    Author = "O'Reilly",
+                    AdditionalInformation = "Used - Acceptable"
                 };
                 book3.Seller = testUser;
                 var img3 = new Image()
@@ -133,7 +136,7 @@ namespace SchoolBookApplication.Data.Migrations
                 book3.Image = img3;
                 var category3 = new BookCategory()
                 {
-                    Name = "Programming",
+                    Name = "Computer Science",
                 };
                 var bookType3 = new BookType()
                 {
@@ -154,9 +157,10 @@ namespace SchoolBookApplication.Data.Migrations
                 //book4
                 var book4 = new Book()
                 {
-                    OriginalPrice = 300,
+                    OriginalPrice = 400,
                     SalePrice = 200,
                     ListingDate = new DateTime(2017, 3, 16),
+                    Author = "Adam Sandler",
                     AdditionalInformation = "excellent condition"
                 };
                 book4.Seller = testUser;
@@ -169,7 +173,7 @@ namespace SchoolBookApplication.Data.Migrations
                 book4.Image = img4;
                 var category4 = new BookCategory()
                 {
-                    Name = "Programming",
+                    Name = "Computer Science",
                 };
                 var bookType4 = new BookType()
                 {
