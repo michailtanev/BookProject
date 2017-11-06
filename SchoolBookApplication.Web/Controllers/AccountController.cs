@@ -152,7 +152,7 @@ namespace SchoolBookApplication.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email,Name=model.Name,LastName = model.LastName,
+                var user = new User { UserName = model.Email, Email = model.Email,FirstName=model.FirstName,LastName = model.LastName,
                 City = model.City,Address = model.Address,PostCode = model.PostCode,PhoneNumber=model.PhoneNumber};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

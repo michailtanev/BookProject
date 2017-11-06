@@ -35,15 +35,7 @@
                         @Html.EditorFor(model => model.Title, new { htmlAttributes = new { placeholder = "Enter Title", @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                     </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Category, new { htmlAttributes = new { placeholder = "Enter Category", @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                </div>        
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -51,7 +43,23 @@
                         @Html.EditorFor(model => model.Author, new { htmlAttributes = new { placeholder = "Enter Author", @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
                     </div>
-                </div>               
+                </div>      
+                @{
+                    List<SelectListItem> listCategories = new List<SelectListItem>();
+                    listCategories.Add(new SelectListItem { Text = "Computer Science", Value = "Computer Science" });
+                    listCategories.Add(new SelectListItem { Text = "Multimedia Design", Value = "Multimedia Design" });
+                    listCategories.Add(new SelectListItem { Text = "IT Technology", Value = "IT Technology" });
+                    listCategories.Add(new SelectListItem { Text = "Production Technology", Value = "Production Technology" });
+
+                }
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.Category, listCategories, "Select Category", new { @class = "form-control" })
+                        @*@Html.EditorFor(model => model.Category, new { htmlAttributes = new { placeholder = "Enter Category", @class = "form-control" } })*@
+                        @*@Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })*@
+                    </div>
+                </div>
                 @{
                     List<SelectListItem> listItems = new List<SelectListItem>();
                     listItems.Add(new SelectListItem { Text = "Used - Like New", Value = "Used - Like New" });
@@ -73,26 +81,27 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.UploadPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.UploadPhoto, htmlAttributes: new {  @class = "control-label col-md-2" })
                     <div class="col-md-10">                        
                         @Html.TextBoxFor(model => model.UploadPhoto, htmlAttributes: new { enctype = "multipart/form-data", type = "file", id = "imgInp"})<br />
                     </div>
                 </div>
-
               </div>
             </div>
-     <div class="col-lg-6">
-         <img id="choosePic" src="#" class="img-responsive" />
+     <div class="col-lg-6">         
+          <img id="choosePic" src="#" class="img-responsive" onclick = "rotateBy10Deg(this)"   />         
      </div>
      <div class="form-group">
        <div class="col-md-offset-2 col-md-10 dimension">
-         <input type="submit" value="Create" class="btn btn-primary btn-default" />
+         <input type="submit" value="Create" class="btn btn-primary btn-default" id="myBtn"/>
          <a href="@Url.Action("Index","Home")" class="btn btn-danger btn-default">Cancel</a>
-           @if (TempData["Success"] != null)
-           {
-               <p class="alert alert-success" id="successMessage">@TempData["Success"]</p>
-           }
-       </div>
+                      @if (TempData["Success"] != null)
+                      {
+                        <div class="green">
+                            <h3 class="alert alert-success" id="successMessage"><strong> @TempData["Success"]</strong></h3>
+                        </div>                      
+                      }
+        </div>
      </div>
    </div>
 
@@ -116,11 +125,11 @@
     });
 
    
-    //var delta = 0;
-    //function rotateBy10Deg(ele){
-    //        ele.style.webkitTransform = "rotate(" + delta + "deg)";
-    //    delta+=90;
-    //}
+    var delta = 0;
+    function rotateBy10Deg(imgInp){
+        imgInp.style.webkitTransform = "rotate(" + delta + "deg)";
+        delta+=90;
+    }
 
 
 </script>

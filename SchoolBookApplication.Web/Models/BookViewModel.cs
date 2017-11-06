@@ -20,6 +20,7 @@ namespace SchoolBookApplication.Web.Models
         public string Category { get; set; }
         public int? ImageId { get; set; }
         public string SellerFirstName { get; set; }
+        public string SellerLastName { get; set; }
 
     }
 }

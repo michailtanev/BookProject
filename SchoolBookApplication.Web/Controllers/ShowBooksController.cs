@@ -18,7 +18,8 @@ namespace SchoolBookApplication.Web.Controllers
                 ImageId = x.Image.ImageId,
                 Category = x.Type.BookCategory.Name,
                 Type = x.Type.Name,
-                SellerFirstName=x.Seller.Name,
+                SellerFirstName=x.Seller.FirstName,
+                SellerLastName = x.Seller.LastName,
                 ListingDate = x.ListingDate,
                 Price = x.SalePrice
             }).OrderByDescending(x => x.ListingDate);

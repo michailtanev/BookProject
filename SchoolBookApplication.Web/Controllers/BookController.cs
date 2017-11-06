@@ -19,7 +19,7 @@ namespace SchoolBookApplication.Web.Controllers
                     Title = x.Type.Name,
                     Category=x.Type.BookCategory.Name,
                     ImageId = x.Image.ImageId,
-                    SellerFirstName=x.Seller.Name,
+                    SellerFirstName=x.Seller.FirstName,
                     SellerLastName = x.Seller.LastName,
                     SellerEmail = x.Seller.Email,
                     SellerPhone = x.Seller.PhoneNumber,
