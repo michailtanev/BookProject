@@ -54,7 +54,7 @@
                 this.Data.Books.Add(book);
                 this.Data.SaveChanges();
             }
-            TempData["Success"] = "Added Successfully!";
+            TempData["Success"] = "Your Book Has Been Added Successfully!";
             return RedirectToAction("Create", "CreateBook");
         }
 

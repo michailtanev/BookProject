@@ -30,7 +30,8 @@ namespace SchoolBookApplication.Data.Migrations
         {
             var testUser = new User
             {
-                Name = "Mihail Tanev",
+                FirstName = "Mihail",
+                LastName = "Tanev",
                 Email = "test_user@gmail.com",
                 UserName = "testUser",
                 PhoneNumber = "50 645 177",

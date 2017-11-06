@@ -8,8 +8,8 @@
 
     public class User : IdentityUser
     {
-        public virtual ICollection<Book> Books { get; set; } //in case we want to see all cars from one seller; virtual for lazy loading
-        public string Name { get; set; }
+        public virtual ICollection<Book> Books { get; set; } //in case we want to see all books from one seller; virtual for lazy loading
+        public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PostCode { get; set; }
         public string Address { get; set; }
