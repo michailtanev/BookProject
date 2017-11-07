@@ -59,7 +59,7 @@
                             <a class="btn btn-primary" href="@Url.Action("BookDetails","Book",new { book.Id })">Details</a>
                         </p>*@
                         <p><span class="glyphicon glyphicon-education" style="color:#337ab7"></span> @book.Category</p>
-                        <p>@book.ListingDate.ToString("dd MMMM yyyy") </p>
+                        <p>@book.ListingDate.ToString("HH:MM, dd MMMM yyyy") </p>
                         @*<h4>Seller : @book.SellerFirstName</h4>*@
                     </div>
                 </div>
