@@ -161,7 +161,7 @@ namespace SchoolBookApplication.Data.Migrations
                     SalePrice = 200,
                     ListingDate = new DateTime(2017, 3, 16),
                     Author = "Adam Sandler",
-                    AdditionalInformation = "excellent condition"
+                    AdditionalInformation = "Used - Very Good"
                 };
                 book4.Seller = testUser;
                 var img4 = new Image()
