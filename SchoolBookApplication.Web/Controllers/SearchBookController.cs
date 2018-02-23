@@ -25,8 +25,8 @@ namespace SchoolBookApplication.Web.Controllers
                 string carBrand = Convert.ToString(model.BookType);
                 var db = new SchoolBookDbContext();
                 IEnumerable<Book> cars = db.Books
-                    .Where(x => x.Type.Name == carBrand)
-                    //|| x.Model.Name == carBrand)
+                    .Where(x => x.Type.Name == carBrand
+                    || x.Type.BookCategory.Name == carBrand)
                     .ToList();
                 return PartialView("_SearchBook", cars);
             }
