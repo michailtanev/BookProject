@@ -89,23 +89,22 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <img id="choosePic" src="#" class="img-responsive" onclick="rotateBy10Deg(this)" />
+            <img id="choosePic" src="" class="img-responsive" onclick="rotateBy10Deg(this)" />
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10 dimension">
                 <input type="submit" value="Create" class="btn btn-primary btn-default" />
                 <a href="@Url.Action("Index","Home")" class="btn btn-danger btn-default">Cancel</a>
                 @if (TempData["Success"] != null)
-                {
+                 {
                     <div class="green">
                         <h3 class="alert alert-success" id="successMessage"><strong> @TempData["Success"]</strong></h3>
                     </div>
-                }
+                 }
             </div>
         </div>
     </div>
-
-}
+ }
 
 <script>
     function readURL(input) {
