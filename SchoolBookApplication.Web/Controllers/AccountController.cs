@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SchoolBookApplication.Web.Models;
 using SchoolBookApplication.Domain;
+using System.IO;
 
 namespace SchoolBookApplication.Web.Controllers
 {
@@ -149,12 +150,24 @@ namespace SchoolBookApplication.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register([Bind(Exclude = "UserPhoto")]RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
+                byte[] imageData = null;
+                if (Request.Files.Count > 0)
+                {
+                    HttpPostedFileBase poImgFile = Request.Files["UserPhoto"];
+
+                    using (var binary = new BinaryReader(poImgFile.InputStream))
+                    {
+                        imageData = binary.ReadBytes(poImgFile.ContentLength);
+                    }
+                }
                 var user = new User { UserName = model.UserName, Email = model.Email,FirstName=model.FirstName,LastName = model.LastName,
                 City = model.City,Address = model.Address,PostCode = model.PostCode,PhoneNumber=model.PhoneNumber};
+                user.UserPhoto = imageData;
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

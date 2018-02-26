@@ -14,6 +14,8 @@
         public string PostCode { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
+        public byte[] UserPhoto { get; set; }
+
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

@@ -22,15 +22,17 @@ namespace SchoolBookApplication.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                string carBrand = Convert.ToString(model.BookType);
+                string booktype = Convert.ToString(model.BookType);
                 var db = new SchoolBookDbContext();
-                IEnumerable<Book> cars = db.Books
-                    .Where(x => x.Type.Name == carBrand
-                    || x.Type.BookCategory.Name == carBrand)
+                IEnumerable<Book> books = db.Books
+                    .Where(x => x.Type.Name.Contains(booktype) 
+                    || x.Type.BookCategory.Name.Contains(booktype))                    
+                    .OrderByDescending(x => x.ListingDate)
                     .ToList();
-                return PartialView("_SearchBook", cars);
+                return PartialView("_SearchBook", books);
             }
-            return Json("Error");
+            return Json("Error Message");
         }
+       
     }
 }
