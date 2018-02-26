@@ -21,13 +21,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("School Book Market", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("SchoolBookMarket", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">                   
-                    <li>@Html.ActionLink("Sell Your Book", "Create", "CreateBook")</li>
+                <ul class="nav navbar-nav">   
+                    <li>@Html.ActionLink("Publish", "Create", "CreateBook")</li>
                     <li>@Html.ActionLink("Books For Sale", "Show", "ShowBooks")</li>
-                    <li>@Html.ActionLink("Search", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Search", "Search", "SearchBook")</li>
                     <li>@Html.ActionLink("My Profile", "Contact", "Home")</li>
                     <li><a href="/#contact" class="tab-selected" title="Admin">Contact</a>
                     </li>
@@ -40,7 +40,7 @@
         @RenderBody()     
     </div>                    
         <footer>           
-            <p>www.schoolbookmarket.com &copy; @DateTime.Now.Year  Created By Mihail Tanev</p>
+            <p>&copy; 2017 schoolbookmarket | Created By Mihail Tanev</p>
         </footer>          
     </div>
 

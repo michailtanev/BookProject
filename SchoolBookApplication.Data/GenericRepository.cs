@@ -5,7 +5,6 @@
     using System.Collections.Generic;
     using System.Data.Entity.Infrastructure;
     using System.Linq;
-    using Domain;
 
     public class GenericRepository<T> : IRepository<T> where T : class
     {
@@ -89,9 +88,12 @@
             entry.State = EntityState.Detached;
         }
 
-        public IEnumerable<Book> SearchBook(string model)
+
+        public IEnumerable<Domain.Book> SearchBook(string model)
         {
-            throw new NotImplementedException();
+
+            return null;
+
         }
     }
 }
