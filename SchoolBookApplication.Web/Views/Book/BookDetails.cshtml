@@ -12,7 +12,7 @@
 </div>
 <div class="row">
     <div class="col-md-6">
-        <img width="500" height="500" src="@Url.Action("Image", "Home", new { id = Model.ImageId})"   class="thumbnail img-responsive"/>
+        <img width="500" height="500" src="@Url.Action("Image", "Home", new { id = Model.ImageId})" class="thumbnail img-responsive"/>
     </div>
    
     <div class="col-md-6">
@@ -26,18 +26,19 @@
                     <li class="list-group-contact-items"><label>Author : <span>@Model.Author</span></label></li>
                     <li class="list-group-contact-items"><label>Year : <span>@Model.Year</span></label></li>
                     <li class="list-group-contact-items"><label>Condition : <span>@Model.AdditionalInformation</span></label></li>                    
-                    <li class="list-group-contact-items"><label>Posted on : <span>@Model.ListingDate.ToString(" HH:mm, dd MMMM yyyy")  </span></label></li> 
+                    <li class="list-group-contact-items"><label>Posted on : <span>@Model.ListingDate.ToString("MMMM dd, yyyy")  </span></label></li> 
           
             </ul>
         </div>
         
         <h3 class="contact-info"><u>Contact Information:</u></h3>
         <div>
-            <ul class="list-group"style="width:350px;">
+            <ul class="list-group" style="width:350px;">
                 <li class="list-group-item">Name : <p class="pull-right text-info">@Model.SellerFirstName @Model.SellerLastName</p></li>
                 <li class="list-group-item">Phone : <p class="pull-right text-info">@Model.SellerPhone</p></li>
                 <li class="list-group-item">Email : <p class="pull-right text-info"><a href="mailto:@Model.SellerEmail">@Model.SellerEmail</a></p></li>
                 <li class="list-group-item">City : <p class="pull-right text-info">@Model.City</p></li>
+                <li class="list-group-item">User since : <p class="pull-right text-info">@Model.RegistrationDate.Value.ToString("MMMM / yyyy")</p></li>
             </ul>
         </div>
         @*<p><span class="glyphicon glyphicon-chevron-left" style="color:#337ab7"></span>

@@ -12,6 +12,7 @@ namespace SchoolBookApplication.Web.Models
         public decimal OriginalPrice { get; set; }
         public decimal SalePrice { get; set; }
         public DateTime ListingDate { get; set; }
+        public DateTime? RegistrationDate { get; set; }
         public string Title { get; set; }
         public int? Year { get; set; }
         public string Category { get; set; }

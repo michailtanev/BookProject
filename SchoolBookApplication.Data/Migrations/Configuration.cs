@@ -4,7 +4,6 @@ namespace SchoolBookApplication.Data.Migrations
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.IO;
     using System.Linq;
@@ -35,7 +34,8 @@ namespace SchoolBookApplication.Data.Migrations
                 Email = "test_user@gmail.com",
                 UserName = "testUser",
                 PhoneNumber = "50 645 177",
-                City ="Copenhagen"
+                City = "Copenhagen",
+                RegistrationDate = new DateTime(2015,1,10)
             };
 
             var existingTestUser = context.Users.Where(u => string.Compare(u.Email, testUser.Email, true) == 0).FirstOrDefault();

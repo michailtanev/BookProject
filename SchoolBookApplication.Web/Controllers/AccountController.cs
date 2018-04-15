@@ -164,7 +164,7 @@ namespace SchoolBookApplication.Web.Controllers
                         imageData = binary.ReadBytes(poImgFile.ContentLength);
                     }
                 }
-                var user = new User { UserName = model.UserName, Email = model.Email,FirstName=model.FirstName,LastName = model.LastName,
+                var user = new User { UserName = model.UserName, Email = model.Email,FirstName=model.FirstName,LastName = model.LastName, RegistrationDate=DateTime.Now,
                 City = model.City,Address = model.Address,PostCode = model.PostCode,PhoneNumber=model.PhoneNumber};
                 user.UserPhoto = imageData;
 

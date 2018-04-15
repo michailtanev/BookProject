@@ -39,6 +39,7 @@ textarea {
     padding-top: 20px;
 }
 .jumbotron {
+    padding-top:120px;
     background-image:url('../Content/frontpic.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;        
@@ -342,4 +343,178 @@ width: 100%;
 }
 #soome{
     padding-bottom:15px;
+}
+.thumbnail {
+    display: block;
+    padding: 2px;
+    margin-bottom: 20px;
+    line-height: 1.0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
+.layer {
+    text-align: center;
+}
+
+    .layer h3 {
+        font-size: 4em;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: #fff;
+        margin: 0.5em 0;
+        display: inline;
+        font-weight: 900;
+    }
+
+        .layer h3:nth-child(odd) {
+            color: #fff;
+        }
+
+        .layer h3:nth-child(3) {
+            color: #fc7e46;
+        }
+
+        .layer h3:nth-child(5) {
+            color: #e6c45e;
+        }
+
+        .layer h3:nth-child(7) {
+            color: #00b9ef;
+        }
+
+        .layer h3:nth-child(9) {
+            color: #2e8aec;
+        }
+
+        .layer h3:nth-child(11) {
+            color: #35ead2;
+        }
+
+        .layer h3:nth-child(13) {
+            color: #eb5273;
+        }
+        .layer h3:nth-child(15) {
+            color: #00b9ef;
+        }
+        .layer h3:nth-child(17) {
+            color: #ffd800;
+        }
+
+h4.title2-w3ls {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    border-top: 2px #e6e6e6 dashed;
+    margin: 8px auto;
+    width: 55%;
+    letter-spacing: 9px;
+    word-spacing: 10px;
+    line-height: 2.5;
+}
+
+/*--w3layouts--*/
+/*--agileits--*/
+
+.layer p {
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: 11px;
+    color: #FFF;
+    word-spacing: 12px;
+    text-transform: uppercase;
+}
+
+.layer a {
+    padding: 4px 0;
+    color: #3498db;
+    border-radius: 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    width: 8%;
+    line-height: 2;
+    margin: 25px auto;
+    background: #fff;
+    text-transform: uppercase;
+    display: block;
+}
+
+    .layer a:hover {
+        background: #fff;
+        color: #3498db;
+    }
+/*-- //Slider --*/
+/*-- about --*/
+.section-w3ls {
+    padding: 70px 0 80px;
+}
+
+.about-main {
+    margin-top: 50px;
+}
+
+.about1 {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2em 2em;
+}
+
+.about-w3ls {
+    background: url(../images/about.jpg) no-repeat center;
+    background-size: cover;
+}
+
+h3.title-agile {
+    color: #eb5273;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 33px;
+}
+
+    h3.title-agile.about {
+        margin-bottom: 10px;
+    }
+
+span.sub-title {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: #ea4335;
+    margin: 0px 13px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+span.about-p {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 12px 0 30px;
+    display: block;
+}
+
+.ab-right {
+    text-align: right;
+}
+
+ul{
+    list-style-type:none;
+}
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-weight: 100;
+    text-transform: capitalize;
+
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: white;  
+    text-transform: uppercase;
+    
 }

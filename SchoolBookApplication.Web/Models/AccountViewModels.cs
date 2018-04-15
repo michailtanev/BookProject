@@ -84,7 +84,7 @@ namespace SchoolBookApplication.Web.Models
         [Required]
         [Display(Name="Phone Number")]
         public string PhoneNumber { get; set; }
-        [Required]
+        
         [Display(Name = "User Photo")]
         public byte[] UserPhoto { get; set; }
 

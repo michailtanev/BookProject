@@ -22,32 +22,32 @@
 
         [Authorize]
         [HttpPost]
-        public ActionResult Create(CreateBookViewModel b)
+        public ActionResult Create(CreateBookViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var user = User.Identity.GetUserId();
                 byte[] content = null;
                 string fileExtension = null;
-                if (b.UploadPhoto != null)
+                if (model.UploadPhoto != null)
                 {
                     using (var mem = new MemoryStream())
                     {
-                        b.UploadPhoto.InputStream.CopyTo(mem);
+                        model.UploadPhoto.InputStream.CopyTo(mem);
                         content = mem.GetBuffer();                      
-                        fileExtension = b.UploadPhoto.FileName.Split(new[] { '.' }).Last();
+                        fileExtension = model.UploadPhoto.FileName.Split(new[] { '.' }).Last();
                     }
                 }
 
                 Book book = new Book
                 {
-                    OriginalPrice = b.OriginaPrice ?? 0,
-                    SalePrice = b.SalePrice ?? 0,
-                    Type = new BookType { Name = b.Title, Year = b.Year ?? 0, BookCategory = new BookCategory { Name = b.Category } },
+                    OriginalPrice = model.OriginaPrice ?? 0,
+                    SalePrice = model.SalePrice ?? 0,
+                    Type = new BookType { Name = model.Title, Year = model.Year ?? 0, BookCategory = new BookCategory { Name = model.Category } },
                     ListingDate = DateTime.Now,
                     SellerId = user,
-                    Author=b.Author,
-                    AdditionalInformation = b.AdditionalInformation,
+                    Author=model.Author,
+                    AdditionalInformation = model.AdditionalInformation,
                     Image = new Image { Content = content, FileExtension = fileExtension }
                 };
 

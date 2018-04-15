@@ -2,6 +2,7 @@
 {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using System;
     using System.Collections.Generic;
     using System.Security.Claims;
     using System.Threading.Tasks;
@@ -15,6 +16,8 @@
         public string Address { get; set; }
         public string City { get; set; }
         public byte[] UserPhoto { get; set; }
+        public DateTime? RegistrationDate { get; set; }
+
 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)

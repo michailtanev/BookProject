@@ -6,8 +6,7 @@ namespace SchoolBookApplication.Data
 {
     public class SchoolBookDbContext : IdentityDbContext<User>
     {
-        public SchoolBookDbContext()
-            : base("DefaultConnection", throwIfV1Schema:false)
+        public SchoolBookDbContext() : base("DefaultConnection", throwIfV1Schema:false)
         {
         }
 
