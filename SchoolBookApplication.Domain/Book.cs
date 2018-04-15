@@ -13,7 +13,7 @@
         public decimal OriginalPrice { get; set; }
         public decimal SalePrice { get; set; }
 
-        public DateTime ListingDate { get; set; }
+        public DateTime CreatedOn { get; set; }
 
         public string SellerId { get; set; }
         public virtual User Seller { get; set; }

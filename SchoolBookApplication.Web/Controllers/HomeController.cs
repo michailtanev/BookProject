@@ -22,7 +22,7 @@ namespace SchoolBookApplication.Web.Controllers
                 ImageId = x.Image.ImageId,
                 Category = x.Type.BookCategory.Name,
                 Type = x.Type.Name,
-                ListingDate = x.ListingDate,
+                ListingDate = x.CreatedOn,
                 Price = x.SalePrice,
             }).OrderByDescending(x => x.ListingDate);
 

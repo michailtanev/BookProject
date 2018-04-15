@@ -44,7 +44,7 @@
                     OriginalPrice = model.OriginaPrice ?? 0,
                     SalePrice = model.SalePrice ?? 0,
                     Type = new BookType { Name = model.Title, Year = model.Year ?? 0, BookCategory = new BookCategory { Name = model.Category } },
-                    ListingDate = DateTime.Now,
+                    CreatedOn = DateTime.Now,
                     SellerId = user,
                     Author=model.Author,
                     AdditionalInformation = model.AdditionalInformation,

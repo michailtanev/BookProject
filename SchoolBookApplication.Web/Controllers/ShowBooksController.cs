@@ -20,7 +20,7 @@ namespace SchoolBookApplication.Web.Controllers
                 Type = x.Type.Name,
                 SellerFirstName=x.Seller.FirstName,
                 SellerLastName = x.Seller.LastName,
-                ListingDate = x.ListingDate,
+                ListingDate = x.CreatedOn,
                 Price = x.SalePrice
             }).OrderByDescending(x => x.ListingDate);
 

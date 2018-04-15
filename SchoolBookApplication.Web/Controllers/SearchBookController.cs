@@ -27,7 +27,7 @@ namespace SchoolBookApplication.Web.Controllers
                 IEnumerable<Book> books = db.Books
                     .Where(x => x.Type.Name.Contains(booktype) 
                     || x.Type.BookCategory.Name.Contains(booktype))                    
-                    .OrderByDescending(x => x.ListingDate)
+                    .OrderByDescending(x => x.CreatedOn)
                     .ToList();
                 return PartialView("_SearchBook", books);
             }

@@ -14,7 +14,7 @@ namespace SchoolBookApplication.Data.Migrations
 
         public Configuration()
         {
-            this.AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationsEnabled = false;
             this.AutomaticMigrationDataLossAllowed = true;
             
         }
@@ -48,7 +48,7 @@ namespace SchoolBookApplication.Data.Migrations
                 {
                     OriginalPrice = 700,
                     SalePrice = 500,
-                    ListingDate = new DateTime(2017, 1,10 ),
+                    CreatedOn = new DateTime(2017, 1,10 ),
                     Author = "Daniel Attenborough",
                     AdditionalInformation = "Used - Like New"
                 };
@@ -85,7 +85,7 @@ namespace SchoolBookApplication.Data.Migrations
                 {
                     OriginalPrice = 650,
                     SalePrice = 400,
-                    ListingDate = new DateTime(2017, 2, 8),
+                    CreatedOn = new DateTime(2017, 2, 8),
                     Author = "Michael Boller",
                     AdditionalInformation = "Used - Very Good"
                 };
@@ -122,7 +122,7 @@ namespace SchoolBookApplication.Data.Migrations
                 {
                     OriginalPrice = 800,
                     SalePrice = 500,
-                    ListingDate = new DateTime(2017,3,30),
+                    CreatedOn = new DateTime(2017,3,30),
                     Author = "O'Reilly",
                     AdditionalInformation = "Used - Acceptable"
                 };
@@ -159,7 +159,7 @@ namespace SchoolBookApplication.Data.Migrations
                 {
                     OriginalPrice = 400,
                     SalePrice = 200,
-                    ListingDate = new DateTime(2017, 3, 16),
+                    CreatedOn = new DateTime(2017, 3, 16),
                     Author = "Adam Sandler",
                     AdditionalInformation = "Used - Very Good"
                 };

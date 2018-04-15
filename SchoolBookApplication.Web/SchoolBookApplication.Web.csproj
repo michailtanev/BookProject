@@ -292,6 +292,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ClassDiagram1.cd" />
+    <None Include="Properties\PublishProfiles\SchoolBookApplicationWeb - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Sellyourbook - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\sellyourbooks - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Studentmarket - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

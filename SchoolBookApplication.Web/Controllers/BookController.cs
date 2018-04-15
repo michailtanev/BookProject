@@ -15,7 +15,7 @@ namespace SchoolBookApplication.Web.Controllers
                     OriginalPrice=x.OriginalPrice,
                     SalePrice=x.SalePrice,
                     Year=x.Type.Year,
-                    ListingDate=x.ListingDate,
+                    ListingDate=x.CreatedOn,
                     RegistrationDate=x.Seller.RegistrationDate,
                     Title = x.Type.Name,
                     Category=x.Type.BookCategory.Name,
